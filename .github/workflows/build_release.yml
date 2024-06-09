@@ -31,7 +31,7 @@ jobs:
 
       - name: Build binary with PyInstaller
         run: |
-          pyinstaller --onefile calculator.py
+          pyinstaller --onefile main/calculator.py
 
       - name: Build project
         run: |
