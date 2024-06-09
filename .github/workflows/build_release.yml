@@ -47,3 +47,13 @@ jobs:
           release_name: ${{ github.run_number }}
           draft: false
           prerelease: false
+      - name: Upload Binary Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./main/calculator
+          asset_name: calculator
+          asset_content_type: application/octet-stream
+  
