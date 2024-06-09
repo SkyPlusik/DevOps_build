@@ -27,12 +27,6 @@ jobs:
         run: |
           python -m compileall .
 
-      - name: Make zip directory
-        run: |
-          mkdir bait_files
-          mv **/*.pyc bait_files
-          zip -r bait_files.zip bait_files
-
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
